@@ -180,7 +180,7 @@
         <EntityTypeShape EntityType="MBM_SOPIC_SPINE_521XModel.SYS_WEB_STORED_PROC" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="MBM_SOPIC_SPINE_521XModel.WSM_WEBSERVICE_CONFIG" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="MBM_SOPIC_SPINE_521XModel.WSM_WEBSERVICE_LOG" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBM_SOPIC_SPINE_521XModel.WSM_WEBSERVICE_QUEUE" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBM_SOPIC_SPINE_521XModel.WSM_WEBSERVICE_QUEUE" Width="1.5" PointX="4.75" PointY="0.5" IsExpanded="true" />
         <AssociationConnector Association="MBM_SOPIC_SPINE_521XModel.FK_ADM_ACTION_TYPE_LOB_ID" ManuallyRouted="false" />
         <AssociationConnector Association="MBM_SOPIC_SPINE_521XModel.FK_ADM_ACTION_TYPE_LOCALIIZED_ID" ManuallyRouted="false" />
         <AssociationConnector Association="MBM_SOPIC_SPINE_521XModel.FK_ADM_TEMPLATE_ACTION_GENERATED_ACTION_TYPE_ID" ManuallyRouted="false" />
