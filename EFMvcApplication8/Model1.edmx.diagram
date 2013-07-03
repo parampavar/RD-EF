@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b348ed1cd5a94479a0df16e842a6d84b" Name="Diagram1">
+      <Diagram DiagramId="b348ed1cd5a94479a0df16e842a6d84b" Name="Diagram1" ZoomLevel="113">
         <EntityTypeShape EntityType="MBM_SOPIC_SPINE_521XModel.ADM_ACTION_TYPE" Width="1.5" PointX="21" PointY="160" IsExpanded="true" />
         <EntityTypeShape EntityType="MBM_SOPIC_SPINE_521XModel.ADM_ACTION_TYPE_LOCALIZED" Width="1.5" PointX="38.25" PointY="158" IsExpanded="true" />
         <EntityTypeShape EntityType="MBM_SOPIC_SPINE_521XModel.ADM_ACTIVITY_TYPE" Width="1.5" PointX="28.25" PointY="126.625" IsExpanded="true" />

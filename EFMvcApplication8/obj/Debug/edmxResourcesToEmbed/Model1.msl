@@ -12120,7 +12120,7 @@
     <FunctionImportMapping FunctionImportName="xpmed_PostBillCommunicateUpdate" FunctionName="MBM_SOPIC_SPINE_521XModel.Store.xpmed_PostBillCommunicateUpdate" />
     <FunctionImportMapping FunctionImportName="xpmed_PostBillDetails" FunctionName="MBM_SOPIC_SPINE_521XModel.Store.xpmed_PostBillDetails">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="MBM_SOPIC_SPINE_521XModel.xpmed_PostBillDetails_Result">
+        <ComplexTypeMapping TypeName="MBM_SOPIC_SPINE_521XModel.xpmed_PostBillDetails_HeaderResult">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="LobId" ColumnName="LobId" />
           <ScalarProperty Name="CaseTypeSysCode" ColumnName="CaseTypeSysCode" />

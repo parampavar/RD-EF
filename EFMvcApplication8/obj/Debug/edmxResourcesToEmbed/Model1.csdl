@@ -1290,34 +1290,34 @@
       <End Role="WSM_WEBSERVICE_QUEUE" EntitySet="WSM_WEBSERVICE_QUEUE" />
     </AssociationSet>
     <FunctionImport Name="fn_MBMOrgLevelAtLevelAndAbove" ReturnType="Collection(MBM_SOPIC_SPINE_521XModel.fn_MBMOrgLevelAtLevelAndAbove_Result)" IsComposable="true">
-      <Parameter Name="userLoginNameOrId" Type="String" />
+      <Parameter Name="userLoginNameOrId" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="fn_MBMOrgLevelAtLevelAndBelow" ReturnType="Collection(MBM_SOPIC_SPINE_521XModel.fn_MBMOrgLevelAtLevelAndBelow_Result)" IsComposable="true">
-      <Parameter Name="userLoginNameOrId" Type="String" />
+      <Parameter Name="userLoginNameOrId" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="fn_MBMUserAtLevelAndBelow" ReturnType="Collection(MBM_SOPIC_SPINE_521XModel.fn_MBMUserAtLevelAndBelow_Result)" IsComposable="true">
-      <Parameter Name="userLoginNameOrId" Type="String" />
+      <Parameter Name="userLoginNameOrId" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="xpmed_FnSplitString" ReturnType="Collection(MBM_SOPIC_SPINE_521XModel.xpmed_FnSplitString_Result)" IsComposable="true">
-      <Parameter Name="stringValue" Type="String" />
-      <Parameter Name="delimiter" Type="String" />
+      <Parameter Name="stringValue" Mode="In" Type="String" />
+      <Parameter Name="delimiter" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="xpmed_GetPostBillProcedureTypeDetails" ReturnType="Collection(MBM_SOPIC_SPINE_521XModel.xpmed_GetPostBillProcedureTypeDetails_Result)" IsComposable="true">
-      <Parameter Name="caseId" Type="Int32" />
-      <Parameter Name="territoryId" Type="Int32" />
-      <Parameter Name="fromCaseDate" Type="DateTime" />
-      <Parameter Name="toCaseDate" Type="DateTime" />
+      <Parameter Name="caseId" Mode="In" Type="Int32" />
+      <Parameter Name="territoryId" Mode="In" Type="Int32" />
+      <Parameter Name="fromCaseDate" Mode="In" Type="DateTime" />
+      <Parameter Name="toCaseDate" Mode="In" Type="DateTime" />
     </FunctionImport>
     <FunctionImport Name="xprpt_GetKitLoanedCount" ReturnType="Collection(MBM_SOPIC_SPINE_521XModel.xprpt_GetKitLoanedCount_Result)" IsComposable="true">
-      <Parameter Name="kitId" Type="Int32" />
-      <Parameter Name="region" Type="String" />
-      <Parameter Name="startDate" Type="DateTime" />
-      <Parameter Name="endDate" Type="DateTime" />
-      <Parameter Name="salesRepId" Type="Int32" />
-      <Parameter Name="facilityId" Type="Int32" />
-      <Parameter Name="warehouse" Type="Int32" />
-      <Parameter Name="surgeryTypeId" Type="Int32" />
-      <Parameter Name="noOfWeeks" Type="Int32" />
+      <Parameter Name="kitId" Mode="In" Type="Int32" />
+      <Parameter Name="region" Mode="In" Type="String" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+      <Parameter Name="salesRepId" Mode="In" Type="Int32" />
+      <Parameter Name="facilityId" Mode="In" Type="Int32" />
+      <Parameter Name="warehouse" Mode="In" Type="Int32" />
+      <Parameter Name="surgeryTypeId" Mode="In" Type="Int32" />
+      <Parameter Name="noOfWeeks" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="AdmActionTypeDeleteCommand">
       <Parameter Name="ID" Mode="In" Type="Int32" />
@@ -6764,7 +6764,7 @@
       <Parameter Name="userEmailAddress" Mode="In" Type="String" />
       <Parameter Name="performByUserId" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="xpmed_PostBillDetails" ReturnType="Collection(MBM_SOPIC_SPINE_521XModel.xpmed_PostBillDetails_Result)">
+    <FunctionImport Name="xpmed_PostBillDetails" ReturnType="Collection(MBM_SOPIC_SPINE_521XModel.xpmed_PostBillDetails_HeaderResult)">
       <Parameter Name="gmtOffset" Mode="In" Type="Int16" />
       <Parameter Name="caseId" Mode="In" Type="Int32" />
       <Parameter Name="calledBy" Mode="In" Type="String" />
@@ -23564,7 +23564,7 @@
     <Property Type="String" Name="FAX" Nullable="true" MaxLength="24" />
     <Property Type="String" Name="TableName" Nullable="false" MaxLength="19" />
   </ComplexType>
-  <ComplexType Name="xpmed_PostBillDetails_Result">
+  <ComplexType Name="xpmed_PostBillDetails_HeaderResult">
     <Property Type="Int32" Name="Id" Nullable="false" />
     <Property Type="String" Name="LobId" Nullable="true" MaxLength="24" />
     <Property Type="String" Name="CaseTypeSysCode" Nullable="false" MaxLength="32" />
@@ -23629,6 +23629,55 @@
     <Property Type="String" Name="TerritoryShiptoNumber" Nullable="false" MaxLength="128" />
     <Property Type="String" Name="RepPrimaryWarehouseShipToNumber" Nullable="true" MaxLength="24" />
     <Property Type="Int32" Name="RepWarehouseId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="xpmed_PostBillDetails_DetailResult">
+    <Property Type="String" Name="Confirmed" Nullable="true" MaxLength="24" />
+    <Property Type="String" Name="PartNumber" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="Qty" Nullable="false" />
+    <Property Type="Decimal" Name="Price" Nullable="true" />
+    <Property Type="String" Name="PriceType" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="LotNumber" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="SourceLocation" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="128" />
+    <Property Type="Int16" Name="ConfirmRequired" Nullable="false" />
+    <Property Type="String" Name="ShipAddressType" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ShipAddressId" Nullable="true" />
+    <Property Type="String" Name="ShipAttention" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="ShipNote" Nullable="false" MaxLength="128" />
+    <Property Type="DateTime" Name="ConfirmedDT" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ConfirmedBy" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="CaseId" Nullable="false" />
+    <Property Type="Int16" Name="LiveFlag" Nullable="false" />
+    <Property Type="Int16" Name="LotRequired" Nullable="false" />
+    <Property Type="String" Name="SourceLocValue" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="NextFacility" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="PartShipToType" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="PartShipToNumber" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="PartShipToMethod" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="AccountPrice" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="KitInstanceId" Nullable="false" />
+    <Property Type="String" Name="KitInstanceName" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="KitSerialNumber" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="CurrentWarehouseId" Nullable="false" />
+    <Property Type="String" Name="CurrentWarehouse" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="CurrentWHShipToId" Nullable="false" />
+    <Property Type="String" Name="Location" Nullable="false" MaxLength="128" />
+    <Property Type="Int16" Name="CAPFlag" Nullable="false" />
+    <Property Type="String" Name="CapCode" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="SalesUOM" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ProductId" Nullable="false" />
+    <Property Type="String" Name="LotBarCode" Nullable="false" MaxLength="128" />
+    <Property Type="DateTime" Name="ExpirationDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PartCategory" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="ReplenishmentOrderNumber" Nullable="false" MaxLength="128" />
+    <Property Type="DateTime" Name="ReplenishmentOrderDate" Nullable="true" Precision="23" />
+    <Property Type="Int16" Name="KitFlag" Nullable="false" />
+    <Property Type="Int32" Name="AugmentPartsQty" Nullable="false" />
+    <Property Type="String" Name="DefaultWareHouseShipAddressIDShipToNumber" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="DefaultFacilityShipAddressIDShipToNumber" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="DefaultUserShipAddressIDShipToNumber" Nullable="false" MaxLength="128" />
   </ComplexType>
   <ComplexType Name="xpmed_PostBillList_Result">
     <Property Type="Int32" Name="LockedFlag" Nullable="true" />

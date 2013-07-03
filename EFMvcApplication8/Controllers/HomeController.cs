@@ -21,9 +21,9 @@ namespace EFMvcApplication8.Controllers
                 var rs = dbc.ADM_AUTHORITY_TYPE.Where(x => x.ID > 1);
                 ViewBag.RS = rs;
 
-                var li = dbc.ADM_LIST.Where(x => x.ID > 1);
+                var postBillDetails = dbc.xpmed_PostBillDetails(-8, 1000330004, "FS");
 
-                ViewBag.LIST = li;
+                ViewBag.POSTBILLDETAILS = postBillDetails;
 
             }
             catch (Exception e)

@@ -20107,7 +20107,7 @@ namespace EFMvcApplication8
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("xpmed_PostBillCommunicateUpdate", caseIdParameter, emailToParameter, faxToParameter, userEmailAddressParameter, performByUserIdParameter);
         }
     
-        public virtual ObjectResult<xpmed_PostBillDetails_Result> xpmed_PostBillDetails(Nullable<short> gmtOffset, Nullable<int> caseId, string calledBy)
+        public virtual ObjectResult<xpmed_PostBillDetails_HeaderResult> xpmed_PostBillDetails(Nullable<short> gmtOffset, Nullable<int> caseId, string calledBy)
         {
             var gmtOffsetParameter = gmtOffset.HasValue ?
                 new ObjectParameter("gmtOffset", gmtOffset) :
@@ -20121,7 +20121,7 @@ namespace EFMvcApplication8
                 new ObjectParameter("calledBy", calledBy) :
                 new ObjectParameter("calledBy", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<xpmed_PostBillDetails_Result>("xpmed_PostBillDetails", gmtOffsetParameter, caseIdParameter, calledByParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<xpmed_PostBillDetails_HeaderResult>("xpmed_PostBillDetails", gmtOffsetParameter, caseIdParameter, calledByParameter);
         }
     
         public virtual ObjectResult<xpmed_PostBillList_Result> xpmed_PostBillList(Nullable<short> gmtOffset, Nullable<bool> hidePricedOrders, Nullable<bool> hideReplenishedOrders, Nullable<int> caseId, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, Nullable<short> poStatus, Nullable<short> toStatus, string status, Nullable<int> territory, string supportOwner, string repLogin, string repTerrIdentifier, Nullable<int> facilityID, Nullable<int> surgeonID, string patientLName, string invoiceNumber, string poNumber, string partNumber, string caseTypeIdsList)

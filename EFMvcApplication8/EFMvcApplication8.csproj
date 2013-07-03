@@ -2005,7 +2005,11 @@
     <Compile Include="xpmed_PostBillCommunicateContactList_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="xpmed_PostBillDetails_Result.cs">
+    <Compile Include="xpmed_PostBillDetails_DetailResult.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="xpmed_PostBillDetails_HeaderResult.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="xpmed_PostBillList_Result.cs">
